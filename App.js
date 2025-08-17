@@ -16,7 +16,7 @@ import { notifications } from './src/services/notifications';
 import { sharing } from './src/services/sharing';
 
 // 🎨 Sistema de design
-import { colors } from './src/theme';
+import { colors } from './src/theme/colors';
 
 // 🚫 Ignorar warnings específicos do desenvolvimento
 if (__DEV__) {

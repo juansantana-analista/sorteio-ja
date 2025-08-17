@@ -161,7 +161,3 @@ export function useTheme() {
 
   return theme;
 }
-
-// 📤 Exportações diretas para compatibilidade
-export { colors, spacing, shadows };
-export const typography = getSafeTypography();

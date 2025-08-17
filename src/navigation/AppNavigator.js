@@ -21,7 +21,9 @@ import NumberLotteryScreen from '../screens/NumberLotteryScreen';
 import BingoScreen from '../screens/BingoScreen';
 
 // 🎨 Sistema de design
-import { colors, typography, spacing } from '../theme';
+import { colors } from '../theme/colors';
+import { typography } from '../theme/typography';
+import { spacing } from '../theme/spacing';
 
 // 🎮 Hooks
 import { useGamification } from '../hooks/useGamification';

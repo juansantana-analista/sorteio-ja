@@ -2,10 +2,7 @@
 // 🎨 Sistema de Design - Sorteio Já
 // Ponto de entrada centralizado para todos os componentes de tema
 
-// 🚀 Inicializar sistema de tema de forma segura
-let themeInitialized = false;
-
-// 🔤 Importar componentes de tema
+// 🔤 Importar componentes de tema diretamente
 import { colors } from './colors';
 import { typography } from './typography';
 import { spacing } from './spacing';
@@ -68,21 +65,21 @@ const getSafeTypography = () => {
 /**
  * 🎨 Sistema de tema completo
  */
-export const theme = {
+const theme = {
   colors,
   typography: getSafeTypography(),
   spacing,
   shadows,
 };
 
-// 🔒 Marcar como inicializado
-themeInitialized = true;
+// 📤 Exportações individuais diretas
+export { colors };
+export { spacing };
+export { shadows };
+export { typography };
 
-// 📤 Exportações individuais
-export { colors } from './colors';
-export { typography } from './typography';
-export { spacing } from './spacing';
-export { shadows } from './shadows';
+// 📤 Exportação do tema completo
+export { theme };
 
 // 📤 Exportação padrão
 export default theme;

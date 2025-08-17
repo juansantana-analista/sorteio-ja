@@ -11,7 +11,10 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import { colors, typography, spacing, shadows } from '../theme';
+import { colors } from '../theme/colors';
+import { typography } from '../theme/typography';
+import { spacing } from '../theme/spacing';
+import { shadows } from '../theme/shadows';
 import { useGamification } from '../hooks/useGamification';
 import { useSound } from '../hooks/useSound';
 import { useAds } from '../hooks/useAds';
