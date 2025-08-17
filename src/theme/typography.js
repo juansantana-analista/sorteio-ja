@@ -32,7 +32,7 @@ const platformScale = Platform.select({
     xl: 21,
     '2xl': 25,
   },
-});
+}) || scale;
 
 // ⚖️ Pesos de fonte otimizados
 const fontWeights = {
@@ -46,6 +46,49 @@ const fontWeights = {
   black: '900',    // Máxima enfase
 };
 
+// 🔤 Famílias de fonte por plataforma - Versão segura
+const fontFamilies = (() => {
+  try {
+    const platformFonts = Platform.select({
+      ios: {
+        regular: 'System',
+        medium: 'System',
+        semibold: 'System',
+        bold: 'System',
+        light: 'System',
+        thin: 'System',
+      },
+      android: {
+        regular: 'Roboto',
+        medium: 'Roboto-Medium',
+        semibold: 'Roboto-Bold',
+        bold: 'Roboto-Bold',
+        light: 'Roboto-Light',
+        thin: 'Roboto-Thin',
+      },
+    });
+    
+    return platformFonts || {
+      regular: 'System',
+      medium: 'System',
+      semibold: 'System',
+      bold: 'System',
+      light: 'System',
+      thin: 'System',
+    };
+  } catch (error) {
+    console.warn('⚠️ Erro ao definir fontes da plataforma, usando fallback:', error);
+    return {
+      regular: 'System',
+      medium: 'System',
+      semibold: 'System',
+      bold: 'System',
+      light: 'System',
+      thin: 'System',
+    };
+  }
+})();
+
 // 📐 Alturas de linha para legibilidade
 const lineHeights = {
   none: 1,      // Para displays grandes
@@ -58,6 +101,9 @@ const lineHeights = {
 
 // 📝 Estilos de texto prontos para usar
 export const typography = {
+  // 🔤 Famílias de fonte acessíveis
+  fontFamily: fontFamilies,
+  
   // 🏆 Display - Para momentos especiais e splash
   displayLarge: {
     fontSize: platformScale['7xl'],
@@ -246,18 +292,23 @@ export const typography = {
 
 // 🎯 Função helper para acessar estilos de texto
 export const getTextStyle = (styleName) => {
-  const keys = styleName.split('.');
-  let style = typography;
-  
-  for (const key of keys) {
-    style = style[key];
-    if (!style) {
-      console.warn(`Estilo de texto não encontrado: ${styleName}`);
-      return typography.bodyMedium; // Fallback
+  try {
+    const keys = styleName.split('.');
+    let style = typography;
+    
+    for (const key of keys) {
+      style = style[key];
+      if (!style) {
+        console.warn(`Estilo de texto não encontrado: ${styleName}`);
+        return typography.bodyMedium; // Fallback
+      }
     }
+    
+    return style;
+  } catch (error) {
+    console.warn(`Erro ao acessar estilo de texto ${styleName}:`, error);
+    return typography.bodyMedium; // Fallback
   }
-  
-  return style;
 };
 
 // 📱 Estilos específicos por componente
@@ -321,5 +372,18 @@ export const textSpacing = {
     large: { paddingHorizontal: 16, paddingVertical: 12 },
   },
 };
+
+// 🛡️ Verificação final de segurança
+if (!typography.fontFamily || !typography.fontFamily.regular) {
+  console.warn('⚠️ Typography fontFamily não está definido corretamente, usando fallback');
+  typography.fontFamily = {
+    regular: 'System',
+    medium: 'System',
+    semibold: 'System',
+    bold: 'System',
+    light: 'System',
+    thin: 'System',
+  };
+}
 
 export default typography;

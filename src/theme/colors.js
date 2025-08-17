@@ -3,19 +3,20 @@
 // Inspirado em apps modernos como Duolingo, Instagram e WhatsApp
 
 export const colors = {
-    // 🎯 Cores Primárias - Identidade da marca
-    primary: {
-      50: '#f0f9ff',   // Azul muito claro - backgrounds sutis
-      100: '#e0f2fe',  // Azul claro - cards hover
-      200: '#bae6fd',  // Azul suave - estados disabled
-      300: '#7dd3fc',  // Azul médio - borders
-      400: '#38bdf8',  // Azul vibrante - botões secundários
-      500: '#0ea5e9',  // AZUL PRINCIPAL - botões primários, links
-      600: '#0284c7',  // Azul escuro - hover states
-      700: '#0369a1',  // Azul mais escuro - pressed states
-      800: '#075985',  // Azul profundo - textos importantes
-      900: '#0c4a6e',  // Azul muito escuro - headings
-    },
+      // 🎯 Cores Primárias - Identidade da marca
+  primary: {
+    50: '#f0f9ff',   // Azul muito claro - backgrounds sutis
+    100: '#e0f2fe',  // Azul claro - cards hover
+    200: '#bae6fd',  // Azul suave - estados disabled
+    300: '#7dd3fc',  // Azul médio - borders
+    400: '#38bdf8',  // Azul vibrante - botões secundários
+    500: '#0ea5e9',  // AZUL PRINCIPAL - botões primários, links
+    600: '#0284c7',  // Azul escuro - hover states
+    700: '#0369a1',  // Azul mais escuro - pressed states
+    800: '#075985',  // Azul profundo - textos importantes
+    900: '#0c4a6e',  // Azul muito escuro - headings
+    light: '#e0f2fe', // Versão clara para backgrounds
+  },
   
     // 🎉 Cores de Sucesso - Gamificação e feedback positivo
     success: {
@@ -45,19 +46,35 @@ export const colors = {
       900: '#78350f',  // Amarelo muito escuro
     },
   
-    // 🚨 Cores de Erro - Estados críticos
-    error: {
-      50: '#fef2f2',   // Vermelho clarinho - backgrounds de erro
-      100: '#fee2e2',  // Vermelho claro - notificações de erro
-      200: '#fecaca',  // Vermelho suave - borders de erro
-      300: '#fca5a5',  // Vermelho médio - ícones de erro
-      400: '#f87171',  // Vermelho vibrante - botões de ação crítica
-      500: '#ef4444',  // VERMELHO PRINCIPAL - erros, exclusões
-      600: '#dc2626',  // Vermelho escuro - hover em botões
-      700: '#b91c1c',  // Vermelho mais escuro - pressed
-      800: '#991b1b',  // Vermelho profundo - textos de erro
-      900: '#7f1d1d',  // Vermelho muito escuro
-    },
+      // 🚨 Cores de Erro - Estados críticos
+  error: {
+    50: '#fef2f2',   // Vermelho clarinho - backgrounds de erro
+    100: '#fee2e2',  // Vermelho claro - notificações de erro
+    200: '#fecaca',  // Vermelho suave - borders de erro
+    300: '#fca5a5',  // Vermelho médio - ícones de erro
+    400: '#f87171',  // Vermelho vibrante - botões de ação crítica
+    500: '#ef4444',  // VERMELHO PRINCIPAL - erros, exclusões
+    600: '#dc2626',  // Vermelho escuro - hover em botões
+    700: '#b91c1c',  // Vermelho mais escuro - pressed
+    800: '#991b1b',  // Vermelho profundo - textos de erro
+    900: '#7f1d1d',  // Vermelho muito escuro
+    light: '#fee2e2', // Versão clara para backgrounds
+  },
+
+  // ℹ️ Cores de Informação - Estados neutros e informativos
+  info: {
+    50: '#eff6ff',   // Azul clarinho - backgrounds informativos
+    100: '#dbeafe',  // Azul claro - notificações
+    200: '#bfdbfe',  // Azul suave - borders informativos
+    300: '#93c5fd',  // Azul médio - ícones informativos
+    400: '#60a5fa',  // Azul vibrante - botões informativos
+    500: '#3b82f6',  // AZUL INFORMATIVO - links, estados neutros
+    600: '#2563eb',  // Azul escuro - hover
+    700: '#1d4ed8',  // Azul mais escuro - pressed
+    800: '#1e40af',  // Azul profundo - textos informativos
+    900: '#1e3a8a',  // Azul muito escuro
+    light: '#dbeafe', // Versão clara para backgrounds
+  },
   
     // 🎨 Cores Neutras - Estrutura e tipografia
     neutral: {
@@ -85,29 +102,67 @@ export const colors = {
       confetti: '#ff69b4',  // Confete - animações de celebração
     },
   
-    // 🌈 Gradientes - Para momentos especiais
-    gradients: {
-      primary: ['#0ea5e9', '#0284c7'],           // Azul degradê
-      success: ['#22c55e', '#16a34a'],           // Verde degradê
-      celebration: ['#ff6b6b', '#ffd93d', '#6bcf7f'], // Arco-íris celebração
-      night: ['#1f2937', '#111827'],             // Modo escuro (futuro)
-      gold: ['#ffd700', '#ffed4e'],              // Dourado premium
-    },
+      // 🌈 Gradientes - Para momentos especiais
+  gradients: {
+    primary: ['#0ea5e9', '#0284c7'],           // Azul degradê
+    success: ['#22c55e', '#16a34a'],           // Verde degradê
+    celebration: ['#ff6b6b', '#ffd93d', '#6bcf7f'], // Arco-íris celebração
+    night: ['#1f2937', '#111827'],             // Modo escuro (futuro)
+    gold: ['#ffd700', '#ffed4e'],              // Dourado premium
+  },
+
+  // 🌑 Cores de Sombra - Para elevação e profundidade
+  shadow: {
+    primary: 'rgba(0, 0, 0, 0.1)',    // Sombra padrão
+    secondary: 'rgba(0, 0, 0, 0.05)', // Sombra sutil
+    strong: 'rgba(0, 0, 0, 0.2)',     // Sombra forte
+    colored: 'rgba(14, 165, 233, 0.15)', // Sombra colorida (azul)
+  },
   
-    // 📱 Cores do Sistema - Específicas para mobile
-    system: {
-      background: '#ffffff',      // Background principal do app
-      surface: '#f9fafb',        // Surface de cards e containers
-      surfaceVariant: '#f3f4f6', // Surface alternativa
-      outline: '#e5e7eb',        // Bordas e separadores
-      shadow: 'rgba(0, 0, 0, 0.1)', // Sombras padrão
-      overlay: 'rgba(0, 0, 0, 0.5)', // Overlay para modais
-      
-      // Estados de interação
-      pressed: 'rgba(14, 165, 233, 0.1)',  // Azul com 10% opacity
-      hover: 'rgba(14, 165, 233, 0.05)',   // Azul com 5% opacity
-      focus: 'rgba(14, 165, 233, 0.15)',   // Azul com 15% opacity
-    },
+      // 📱 Cores do Sistema - Específicas para mobile
+  system: {
+    background: '#ffffff',      // Background principal do app
+    surface: '#f9fafb',        // Surface de cards e containers
+    surfaceVariant: '#f3f4f6', // Surface alternativa
+    outline: '#e5e7eb',        // Bordas e separadores
+    shadow: 'rgba(0, 0, 0, 0.1)', // Sombras padrão
+    overlay: 'rgba(0, 0, 0, 0.5)', // Overlay para modais
+    
+    // Estados de interação
+    pressed: 'rgba(14, 165, 233, 0.1)',  // Azul com 10% opacity
+    hover: 'rgba(14, 165, 233, 0.05)',   // Azul com 5% opacity
+    focus: 'rgba(14, 165, 233, 0.15)',   // Azul com 15% opacity
+  },
+
+  // 📝 Cores de Texto - Tipografia e legibilidade
+  text: {
+    primary: '#111827',        // Texto principal
+    secondary: '#6b7280',      // Texto secundário
+    tertiary: '#9ca3af',      // Texto terciário
+    disabled: '#d1d5db',      // Texto desabilitado
+    inverse: '#ffffff',        // Texto sobre fundos escuros
+    link: '#0ea5e9',          // Links e ações
+    success: '#22c55e',        // Texto de sucesso
+    warning: '#f59e0b',        // Texto de aviso
+    error: '#ef4444',          // Texto de erro
+  },
+
+  // 🔗 Cores de Bordas e Separadores
+  border: {
+    light: '#e5e7eb',          // Bordas claras
+    medium: '#d1d5db',         // Bordas médias
+    dark: '#9ca3af',           // Bordas escuras
+    focus: '#0ea5e9',          // Borda de foco
+    error: '#ef4444',          // Borda de erro
+    success: '#22c55e',        // Borda de sucesso
+  },
+
+  // 🎨 Cores Comuns - Acessíveis globalmente
+  common: {
+    white: '#ffffff',          // Branco puro
+    black: '#000000',          // Preto puro
+    transparent: 'transparent', // Transparente
+  },
   
     // 🎮 Cores da Gamificação
     gamification: {
